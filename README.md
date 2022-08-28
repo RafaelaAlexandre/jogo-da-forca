@@ -1,1 +1,1 @@
-# jogo-da-forca
+# Aplicando os conceitos de string para criar um Jogo da Forca em Linguagem C  
