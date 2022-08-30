@@ -9,13 +9,22 @@
 #define TAM 50
 
 int main(){	
-	char string[TAM];
+	int tentativas; 
+	char string[TAM], letra;
 	
 	//lendo palvra
 	printf("entre com uma palavra: ");
 	fgets(string, TAM, stdin);
 	system("pause"); 
 	system("cls");
+	
+	//Lendo letra a ser buscada
+	printf("entre com uma palavra: ");
+	fflush(stdin);	//limpando buffer 
+	scanf("%c", &letra);
+	
+	
+	
 	
 	
 	
