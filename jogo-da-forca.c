@@ -22,7 +22,7 @@ int main(){
 	printf("entre com uma palavra: ");
 	fflush(stdin);	//limpando buffer 
 	scanf("%c", &letra);
-	
+	 
 	
 	
 	
