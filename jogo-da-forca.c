@@ -10,6 +10,7 @@
 #define TRUE 1
 #define FALSE 0
 
+void exibirPalavra(char string[], char caracter);
 
 int main(){	
 	
@@ -21,13 +22,24 @@ int main(){
 	strlwr(string);	//converte letras maiusculas em minuscolas		
 	system("pause"); 
 	system("cls");
-
+	exibirPalavra(string, letra);
 
 	printf("\nescolha uma letra: ");
 	fflush(stdin);	//limpando buffer	
 	scanf("%c", &letra);
 	letra=tolower(letra);
-	
+	exibirPalavra(string, letra);
 		
+}
+void exibirPalavra(char string[], char caracter){
+	int i;
+	printf("\tpalavra escolhida: ");
+	for(i=0;string[i];i++){
+		if(string[i]==caracter){
+			printf("%c",string[i]);
+		}else{
+			printf("*");
+		}
+	}
 }
 
