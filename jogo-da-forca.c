@@ -24,25 +24,37 @@ int main(){
 	gets(string);
 	strlwr(string);							//converte letras maiusculas em minuscolas		
 
-	system("pause"); 
-	system("cls");
 
-	exibirPalavra(string, letra);
+
 
 	quantCaracter = strlen(string);
-	
-	
-	while((tentativa)&&(quantCaracter)){
 		
-		printf("\nescolha uma letra: ");
+	while((tentativa)&&(quantCaracter)){
+		system("pause"); 
+		system("cls");
+		
+		exibirPalavra(string, letra);
+
+		printf("\n\nescolha uma letra: ");
 		fflush(stdin);						//limpando buffer	
 		scanf("%c", &letra);
 		
 		letra=tolower(letra);
 		
 		verificarCondicao(string, letra, &tentativa, &quantCaracter);
+		
+
 	}
-	printf("\nFim do jogo");
+	system("pause"); 
+	system("cls");
+	if((!tentativa)&&(quantCaracter)){
+		printf("\nFIM DE JOGO\n\n");
+		printf("\nVOCE PERDEU\n\n");		
+	}else{
+		printf("\nFIM DE JOGO\n\n");
+		printf("\nVOCE GANHOU\n\n");				
+	}
+
 		
 }
 void exibirPalavra(char string[], char caracter){
@@ -82,13 +94,13 @@ void verificarCondicao(char string[], char caracter, int *cont, int *quantCaract
 		*quantCaracter=*quantCaracter-retorno;
 		exibirPalavra(string, caracter);
 		printf("\nTentativas restantes: %d", *cont);		
-		printf("\nquantidade de caracter: %d", *quantCaracter);
+		printf("\nquantidade de caracter: %d\n", *quantCaracter);
 	}else{
 		(*cont)--;
 		exibirPalavra(string, caracter);
 		printf("\nLetra nao encontrada\n");
 		printf("Tentativas restantes: %d", *cont);
-		printf("\nquantidade de caracter: %d", *quantCaracter);	
+		printf("\nquantidade de caracter: %d\n", *quantCaracter);	
 	}
 }
 
