@@ -32,7 +32,7 @@ int main(){
 	quantCaracter = strlen(string);
 	
 	
-	while(tentativa!=0){
+	while((tentativa)&&(quantCaracter)){
 		
 		printf("\nescolha uma letra: ");
 		fflush(stdin);						//limpando buffer	
@@ -42,7 +42,7 @@ int main(){
 		
 		verificarCondicao(string, letra, &tentativa, &quantCaracter);
 	}
-////	printf("Fim do jogo");
+	printf("Fim do jogo");
 		
 }
 void exibirPalavra(char string[], char caracter){
