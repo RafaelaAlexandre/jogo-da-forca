@@ -10,6 +10,7 @@
 #define TRUE 1
 #define FALSE 0
 
+int buscarCaracter(char string[], char caracter);
 void exibirPalavra(char string[], char caracter);
 
 int main(){	
@@ -40,6 +41,15 @@ void exibirPalavra(char string[], char caracter){
 		}else{
 			printf("*");
 		}
+	}
+}
+int buscarCaracter(char string[], char caracter){
+	int i;
+	for(i=0;string[i];i++){
+		if(string[i]==caracter){
+			return TRUE;
+		}
+		return FALSE;
 	}
 }
 
