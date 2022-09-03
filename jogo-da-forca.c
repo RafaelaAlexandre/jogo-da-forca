@@ -42,7 +42,7 @@ int main(){
 		
 		verificarCondicao(string, letra, &tentativa, &quantCaracter);
 	}
-	printf("Fim do jogo");
+	printf("\nFim do jogo");
 		
 }
 void exibirPalavra(char string[], char caracter){
@@ -75,9 +75,7 @@ int buscarCaracter(char string[], char caracter){
 }
 void verificarCondicao(char string[], char caracter, int *cont, int *quantCaracter){
 	int retorno;
-	
-	
-	
+			
 	retorno= buscarCaracter(string, caracter);
 	
 	if(retorno){
@@ -86,7 +84,7 @@ void verificarCondicao(char string[], char caracter, int *cont, int *quantCaract
 		printf("\nTentativas restantes: %d", *cont);		
 		printf("\nquantidade de caracter: %d", *quantCaracter);
 	}else{
-//		*(cont--);
+		(*cont)--;
 		exibirPalavra(string, caracter);
 		printf("\nLetra nao encontrada\n");
 		printf("Tentativas restantes: %d", *cont);
