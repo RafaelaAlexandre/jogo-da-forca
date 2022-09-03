@@ -1,19 +1,19 @@
-**O que é o projeto?**
+**O que e o projeto?**
 
-    O projeto é um tradicional jogo da força criado em linguagem c.
+    O projeto e um tradicional jogo da forca criado em linguagem c.
 
 **Por que fazer o projeto?** 
 
-    O objetivo do projeto é aplicar  os conceitos de string de maneira funcional e divertida.
+    O objetivo do projeto e aplicar  os conceitos de string de maneira funcional e divertida.
 
 **Como criar o projeto?** 
 
     #  regras do jogo:
 
-        São dois jogadores: 
+        Sao dois jogadores: 
         O primeiro escolhe uma palavra com x letras.  
-        Essa palavra é escondido e somente é revelado o número de letras que a palavra possui. 
-        O segundo usuário escolhe uma letra com que deverá estar na palavra. Se o jogador  acertar, a posição da letra é revelada. Se o jogador errar, é contabilizado 1 erro.
+        Essa palavra e escondido e somente e revelado o numero de letras que a palavra possui. 
+        O segundo usuario escolhe uma letra com que devera estar na palavra. Se o jogador  acertar, a posicao da letra e revelada. Se o jogador errar, e contabilizado 1 erro.
         Perde se o jogador errar uma quantidade  y de tentativas. Ganha se o jogador acertar todas as letras.
 
     #  ALgoritimo programa:
@@ -21,15 +21,15 @@
         -exibir regras
         -pedir dados: string 
         -tratar dados: 
-            -letras maiúsculas/minuscolas
-            -acentuação 
+            -letras maiusculas/minuscolas
+            -acentuacao 
         -exibir string(letras econdidas)
-        - pedir dados: carácter
-        - tratar fados:
-            -letras maiúsculas/minuscolas 
-            -acentuação 
+        - pedir dados: caracter
+        - tratar dados:
+            -letras maiusculas/minuscolas 
+            -acentuacao 
         -procurar letra ( varrer string  ) 
-            condição:
+            condicao:
                 - errar: 
                 contar erro
                 -acertar:  
