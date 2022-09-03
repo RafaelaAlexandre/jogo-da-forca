@@ -13,19 +13,18 @@ ta dando tudo errado
 int buscarCaracter(char string[], char caracter);
 void exibirPalavra(char string[], char caracter);
 void verificarCondicao(char string[], char caracter, int *cont, int*quantCaracter);
+void criotografia(char substring[], char string[]);
+
 
 int main(){	
 	int tentativa=7, quantCaracter;
-	char string[TAM], letra;
+	char string[TAM], substring[TAM], letra;
 	
 	//lendo palvra
 	printf("entre com uma palavra: ");
 //	fgets(string, TAM, stdin);
 	gets(string);
 	strlwr(string);							//converte letras maiusculas em minuscolas		
-
-
-
 
 	quantCaracter = strlen(string);
 		
@@ -47,6 +46,7 @@ int main(){
 	}
 	system("pause"); 
 	system("cls");
+	
 	if((!tentativa)&&(quantCaracter)){
 		printf("\nFIM DE JOGO\n\n");
 		printf("\nVOCE PERDEU\n\n");		
@@ -103,4 +103,12 @@ void verificarCondicao(char string[], char caracter, int *cont, int *quantCaract
 		printf("\nquantidade de caracter: %d\n", *quantCaracter);	
 	}
 }
-
+void criotografia(char substring[], char string[]){
+	int tamanho, i;
+	tamanho= strlen(string);
+	
+	for(i=0;i<tamanho;i++){
+		substring[i]='*';
+	}
+	substring[i]='\0';
+}
