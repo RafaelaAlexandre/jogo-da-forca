@@ -1,5 +1,5 @@
 /*
-ta dando tudo errado 
+ta funcionando 
 */
 #include<stdio.h>
 #include<stdlib.h>
@@ -54,7 +54,6 @@ int main(){
 		
 		verificarCondicao(string, substring, letra, &tentativa, &quantCaracter);
 		
-
 	}
 	system("pause"); 
 	system("cls");
@@ -68,7 +67,6 @@ int main(){
 		printf("\n\nFIM DE JOGO!\n\n");
 		printf("\nVOCE GANHOU!\n\n");				
 	}
-
 		
 }
 //funcao buscar retorna o numero de ocorrencias do caracter
