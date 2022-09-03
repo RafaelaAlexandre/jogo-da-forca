@@ -12,15 +12,16 @@ ta dando tudo errado
 
 int buscarCaracter(char string[], char caracter);
 void exibirPalavra(char string[], char caracter);
-void verificarCondicao(char string[], char caracter, int *cont);
+void verificarCondicao(char string[], char caracter, int *cont, int*quantCaracter);
 
 int main(){	
-	int tentativa=6;
+	int tentativa=7, quantCaracter;
 	char string[TAM], letra;
 	
 	//lendo palvra
 	printf("entre com uma palavra: ");
-	fgets(string, TAM, stdin);
+//	fgets(string, TAM, stdin);
+	gets(string);
 	strlwr(string);							//converte letras maiusculas em minuscolas		
 
 	system("pause"); 
@@ -28,7 +29,9 @@ int main(){
 
 	exibirPalavra(string, letra);
 
-
+	quantCaracter = strlen(string);
+	
+	
 	while(tentativa!=0){
 		
 		printf("\nescolha uma letra: ");
@@ -37,9 +40,9 @@ int main(){
 		
 		letra=tolower(letra);
 		
-		verificarCondicao(string, letra, &tentativa);
+		verificarCondicao(string, letra, &tentativa, &quantCaracter);
 	}
-//	printf("Fim do jogo");
+////	printf("Fim do jogo");
 		
 }
 void exibirPalavra(char string[], char caracter){
@@ -52,11 +55,12 @@ void exibirPalavra(char string[], char caracter){
 			printf("%c",string[i]);
 			
 		}else{
-			
+					
 			printf("*");
 		}
 	}
 }
+//funcao buescar retorna o numero de ocorrencias do caracter
 int buscarCaracter(char string[], char caracter){
 	int i, cont=0;
 	for(i=0;string[i];i++){		
@@ -69,19 +73,24 @@ int buscarCaracter(char string[], char caracter){
 	}
 	return cont;	
 }
-void verificarCondicao(char string[], char caracter, int *cont){
+void verificarCondicao(char string[], char caracter, int *cont, int *quantCaracter){
 	int retorno;
+	
+	
 	
 	retorno= buscarCaracter(string, caracter);
 	
-	if(retorno==TRUE){
+	if(retorno){
+		*quantCaracter=*quantCaracter-retorno;
 		exibirPalavra(string, caracter);
-		printf("\nTentativas restantes: %d", *cont);
+		printf("\nTentativas restantes: %d", *cont);		
+		printf("\nquantidade de caracter: %d", *quantCaracter);
 	}else{
 //		*(cont--);
 		exibirPalavra(string, caracter);
 		printf("\nLetra nao encontrada\n");
-		printf("Tentativas restantes: %d", *cont);	
+		printf("Tentativas restantes: %d", *cont);
+		printf("\nquantidade de caracter: %d", *quantCaracter);	
 	}
 }
 
