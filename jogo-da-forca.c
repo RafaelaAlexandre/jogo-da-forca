@@ -15,7 +15,7 @@ void exibirPalavra(char string[], char caracter);
 void verificarCondicao(char string[], char caracter, int *cont);
 
 int main(){	
-	int tentativa=7;
+	int tentativa=6;
 	char string[TAM], letra;
 	
 	//lendo palvra
@@ -26,13 +26,15 @@ int main(){
 	system("cls");
 	exibirPalavra(string, letra);
 
-	printf("\nescolha uma letra: ");
-	fflush(stdin);	//limpando buffer	
-	scanf("%c", &letra);
-	letra=tolower(letra);
-//	while(){
+
+	while(tentativa){
+		printf("\nescolha uma letra: ");
+		fflush(stdin);	//limpando buffer	
+		scanf("%c", &letra);
+		letra=tolower(letra);
 		verificarCondicao(string, letra, &tentativa);
-//	}
+	}
+	printf("Fim do jogo");
 		
 }
 void exibirPalavra(char string[], char caracter){
@@ -62,8 +64,9 @@ void verificarCondicao(char string[], char caracter, int *cont){
 		exibirPalavra(string, caracter);
 		printf("\nTentativas restantes: %d", *cont);
 	}else{
-		*cont--;
-		printf("Letra nao encontrada\n");
+		*(cont--);
+		exibirPalavra(string, caracter);
+		printf("\nLetra nao encontrada\n");
 		printf("Tentativas restantes: %d", *cont);	
 	}
 }
