@@ -19,16 +19,23 @@ int main(){
 	int tentativa=7, quantCaracter;
 	char string[TAM], substring[TAM], letra;
 	
-	printf("***********JOGO DA FORCA**************\n\n");
 	
-	
-	
+	printf("*****************JOGO DA FORCA**************\n\n");
+	printf("Regras:\n\n");
+	printf("Jogador 1 escolher uma palavra.\n");
+	printf("Jogador 2 tenta adivinhar as letras dessa palavra.\n");
+	printf("Ganha se o Jogador acertar todas as letras.\n");
+	printf("Perde se o Jogador excerder o numero de tentativas.\n");
+	printf("\nTotal de tentativas: %d\n\n", tentativa);
+	system("pause"); 
+	system("cls");
 	
 	//lendo palvra
-	printf("entre com uma palavra: ");
+	printf("Entre com uma palavra: ");
 //	fgets(string, TAM, stdin);			 pega o 'enter'
 	gets(string);
-	strlwr(string);							//converte letras maiusculas em minuscolas		
+	strlwr(string);							//converte letras maiusculas em minuscolas	
+	printf("\nA palavra escolhida e: %s\n\n", string);		
 
 	quantCaracter = strlen(string);
 	
@@ -38,8 +45,8 @@ int main(){
 		system("pause"); 
 		system("cls");
 		
-		printf("\tpalavra escondida: %s", substring);
-		printf("\n\nescolha uma letra: ");
+		printf("\tPalavra escondida: %s", substring);
+		printf("\n\nEscolha uma letra: ");
 		fflush(stdin);						//limpando buffer	
 		scanf("%c", &letra);
 		
@@ -53,13 +60,13 @@ int main(){
 	system("cls");
 	
 	if((!tentativa)&&(quantCaracter)){
-		printf("\tpalavra escondida: %s", substring);
-		printf("\n\nFIM DE JOGO\n\n");
-		printf("\nVOCE PERDEU\n\n");		
+		printf("\tPalavra escondida: %s", substring);
+		printf("\n\nFIM DE JOGO!\n\n");
+		printf("\nVOCE PERDEU!\n\n");		
 	}else{
-		printf("\tpalavra escondida: %s", substring);
-		printf("\n\nFIM DE JOGO\n\n");
-		printf("\nVOCE GANHOU\n\n");				
+		printf("\tPalavra escondida: %s", substring);
+		printf("\n\nFIM DE JOGO!\n\n");
+		printf("\nVOCE GANHOU!\n\n");				
 	}
 
 		
@@ -86,13 +93,13 @@ void verificarCondicao(char string[], char substring[], char caracter, int *cont
 	if(retorno){
 		*quantCaracter=*quantCaracter-retorno;
 		printf("\nVoce acertou a Letra: %c", caracter);
-		printf("\n\nTentativas restantes: %d\n", *cont);		
+		printf("\n\nTentativas restantes: %d\n\n", *cont);		
 //		printf("\nquantidade de caracter: %d\n", *quantCaracter);
 	}else{
 		(*cont)--;
 //		printf("palavra escondida: %s", substring);
 		printf("\nLetra nao encontrada");
-		printf("\n\nTentativas restantes: %d\n", *cont);
+		printf("\n\nTentativas restantes: %d\n\n", *cont);
 //		printf("\nquantidade de caracter: %d\n", *quantCaracter);	
 	}
 }
